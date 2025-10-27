@@ -98,7 +98,7 @@ export default function Home() {
 			Limburg: 4_041_900,
 		};
 
-		const woningzoekendeHuishoudens = 401_000;
+		const woningzoekendeHuishoudens = 434_000;
 		const huidigeWoonbouwsnelheidPerJaar = 82_000;
 
 		const newWoonData = new WoonData(
@@ -156,7 +156,7 @@ export default function Home() {
 						.{" "}
 						<span className="citation-link">
 							<a
-								href="https://www.cbs.nl/nl-nl/nieuws/2025/05/82-duizend-woningen-erbij-in-2024-minder-dan-voorgaande-vijf-jaar"
+								href="https://www.volkshuisvestingnederland.nl/onderwerpen/berekening-woningbouwopgave#:~:text=Er%20zijn%20in%202025%20circa,opzichte%20van%20de%20totale%20voorraad."
 								target="_blank"
 								rel="noopener noreferrer"
 							>
