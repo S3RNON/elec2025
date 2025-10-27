@@ -113,219 +113,230 @@ export default function Home() {
 	if (!woonData) return <div></div>;
 
 	return (
-		<div
-			className="font-[var(--font-lexend-deca)] flex flex-col items-center min-h-screen bg-black p-8 text-center"
-			style={{ width: "100vw", overflowX: "hidden" }}
-		>
-			<div style={{ height: "25vh" }}></div>
-			<div className="flex flex-col justify-center min-h-screen space-y-64">
-				<h1 className="text-5xl md:text-7xl font-black leading-tight text-white max-w-4xl uppercase tracking-tight">
-					In Nederland, is er
-					<br />
-					<span className="text-red-500 drop-shadow-[0_0_30px_rgba(239,68,68,0.5)]">
-						{(woonData.totaleLeegstand / 1_000_000)
-							.toPrecision(3)
-							.toLocaleString()
-							.replace(".", ",")}{" "}
-						miljoen m² leegstand
-					</span>
-					.{" "}
-					<span className="italic text-red-300 text-xl normal-case tracking-normal">
+		<>
+			<div className="container">
+				<div className="spacer"></div>
+				<div className="content-wrapper">
+					<h1 className="heading-primary">
+						In Nederland, is er
+						<br />
+						<span className="highlight-red">
+							{(woonData.totaleLeegstand / 1_000_000)
+								.toPrecision(3)
+								.toLocaleString()
+								.replace(".", ",")}{" "}
+							miljoen m² leegstand
+						</span>
+						.{" "}
+						<span className="citation-link">
+							<a
+								href="https://dashboards.cbs.nl/v5/landelijke_monitor_leegstand/"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								(CBS)
+							</a>
+						</span>
+					</h1>
+
+					<p className="text-medium bordered-text-red">
+						Dit is leegstand dat langer dan een jaar niet bewoond
+						is.
+					</p>
+
+					<h1 className="heading-primary">
+						Er zijn ook in Nederland
+						<br />
+						<span className="highlight-red">
+							{(
+								woonData.woningZoekendeHuishoudens / 1000
+							).toLocaleString()}{" "}
+							duizend woningzoekende huishoudens
+						</span>
+						.{" "}
+						<span className="citation-link">
+							<a
+								href="https://www.cbs.nl/nl-nl/nieuws/2025/05/82-duizend-woningen-erbij-in-2024-minder-dan-voorgaande-vijf-jaar"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								(CBS)
+							</a>
+						</span>
+					</h1>
+
+					<h1 className="heading-primary">
+						Toch worden er maar{" "}
+						<span className="highlight-red">
+							82.000 nieuwe woningen
+						</span>{" "}
+						per jaar gecreëerd.{" "}
+						<span className="citation-link">
+							<a
+								href="https://www.cbs.nl/nl-nl/nieuws/2025/05/82-duizend-woningen-erbij-in-2024-minder-dan-voorgaande-vijf-jaar"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								(CBS)
+							</a>
+						</span>
+					</h1>
+
+					<p className="text-large font-black italic margin-left">
+						Dat is niet genoeg, toch?
+					</p>
+
+					<p className="text-medium text-gray font-bold margin-left">
+						Nou.
+					</p>
+
+					<h1 className="heading-primary">
+						Als we alle leegstand gebruiken om woningzoekende
+						huishoudens te huisvesten, dan kan dat gemiddeld per
+						huishouden{" "}
+						<span className="highlight-emerald">
+							{woonData.gemiddeldeLeegstandPerHuishouden.toFixed(
+								0
+							)}
+							m²
+						</span>
+						.
+					</h1>
+
+					<p className="text-large bordered-text-emerald">
+						Dat kan binnen een jaar geregeld zijn.
+					</p>
+
+					<h1 className="heading-secondary">
+						Zelfs met eisen gesteld over woningen komen we er. Met
+						<br />
+						<span
+							className="highlight-emerald font-black"
+							style={{ fontSize: "1.875rem" }}
+						>
+							2,1 personen per huishouden
+						</span>{" "}
 						<a
-							href="https://dashboards.cbs.nl/v5/landelijke_monitor_leegstand/"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="underline hover:text-red-400 transition-colors duration-200"
+							href="https://www.cbs.nl/nl-nl/visualisaties/dashboard-bevolking/woonsituatie/huishoudens-nu"
+							className="citation-link-emerald"
+						>
+							(CBS)
+						</a>{" "}
+						<br />
+						en een gemiddelde woonoppervlakte van
+						<br />
+						<span
+							className="highlight-emerald font-black"
+							style={{ fontSize: "1.875rem" }}
+						>
+							53m² per persoon
+						</span>{" "}
+						<a
+							href="https://www.cbs.nl/nl-nl/achtergrond/2018/22/woonoppervlakte-in-nederland#:~:text=Gemiddeld%20heeft%20een%20Nederlander%2053,persoon%20doorgaans%20kleiner%20dan%20daarbuiten."
+							className="citation-link-emerald"
 						>
 							(CBS)
 						</a>
-					</span>
-				</h1>
-
-				<p className="text-2xl md:text-3xl text-red-400 max-w-3xl font-bold border-l-4 border-red-500 pl-6 ml-15">
-					Dit is leegstand dat langer dan een jaar niet bewoond is.
-				</p>
-
-				<h1 className="text-5xl md:text-7xl font-black leading-tight text-white max-w-4xl uppercase tracking-tight">
-					Er zijn ook in Nederland
-					<br />
-					<span className="text-red-500 drop-shadow-[0_0_30px_rgba(239,68,68,0.5)]">
-						{(
-							woonData.woningZoekendeHuishoudens / 1000
-						).toLocaleString()}{" "}
-						duizend woningzoekende huishoudens
-					</span>
-					.{" "}
-					<span className="italic text-red-300 text-xl normal-case tracking-normal">
-						<a
-							href="https://www.cbs.nl/nl-nl/nieuws/2025/05/82-duizend-woningen-erbij-in-2024-minder-dan-voorgaande-vijf-jaar"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="underline hover:text-red-400 transition-colors duration-200"
+						,<br />
+						heeft momenteel de gemmidelde huishouden
+						<br />
+						<span
+							className="highlight-emerald font-black"
+							style={{ fontSize: "2.25rem" }}
 						>
-							(CBS)
-						</a>
-					</span>
-				</h1>
+							{woonData.woonOppervlaktePerHuishouden
+								.toFixed(1)
+								.replace(".", ",")}
+							m² per woning
+						</span>
+						.
+					</h1>
 
-				<h1 className="text-5xl md:text-7xl font-black leading-tight text-white max-w-4xl uppercase tracking-tight">
-					Toch worden er maar{" "}
-					<span className="text-red-500 drop-shadow-[0_0_30px_rgba(239,68,68,0.5)]">
-						82.000 nieuwe woningen
-					</span>{" "}
-					per jaar gecreëerd.{" "}
-					<span className="italic text-red-300 text-xl normal-case tracking-normal">
-						<a
-							href="https://www.cbs.nl/nl-nl/nieuws/2025/05/82-duizend-woningen-erbij-in-2024-minder-dan-voorgaande-vijf-jaar"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="underline hover:text-red-400 transition-colors duration-200"
-						>
-							(CBS)
-						</a>
-					</span>
-				</h1>
-
-				<p className="text-3xl md:text-4xl text-white max-w-3xl font-black italic ml-15">
-					Dat is niet genoeg, toch?
-				</p>
-
-				<p className="text-2xl md:text-3xl text-gray-400 max-w-3xl font-bold ml-15">
-					Nou.
-				</p>
-
-				<h1 className="text-5xl md:text-7xl font-black leading-tight text-white max-w-4xl uppercase tracking-tight">
-					Als we alle leegstand gebruiken om woningzoekende
-					huishoudens te huisvesten, dan kan dat gemiddeld per
-					huishouden{" "}
-					<span className="text-emerald-400 drop-shadow-[0_0_30px_rgba(52,211,153,0.5)]">
-						{woonData.gemiddeldeLeegstandPerHuishouden.toFixed(0)}m²
-					</span>
-					.
-				</h1>
-
-				<p className="text-3xl md:text-4xl text-emerald-400 max-w-3xl font-black border-l-4 border-emerald-500 pl-6 ml-15">
-					Dat kan binnen een jaar geregeld zijn.
-				</p>
-
-				<h1 className="text-2xl md:text-3xl text-white max-w-4xl leading-relaxed font-semibold">
-					Zelfs met eisen gesteld over woningen komen we er. Met
-					<br />
-					<span className="text-emerald-400 font-black text-3xl">
-						2,1 personen per huishouden
-					</span>{" "}
-					<a
-						href="https://www.cbs.nl/nl-nl/visualisaties/dashboard-bevolking/woonsituatie/huishoudens-nu"
-						className="underline hover:text-emerald-300 transition-colors duration-200 text-emerald-300"
-					>
-						(CBS)
-					</a>{" "}
-					<br />
-					en een gemiddelde woonoppervlakte van
-					<br />
-					<span className="text-emerald-400 font-black text-3xl">
-						53m² per persoon
-					</span>{" "}
-					<a
-						href="https://www.cbs.nl/nl-nl/achtergrond/2018/22/woonoppervlakte-in-nederland#:~:text=Gemiddeld%20heeft%20een%20Nederlander%2053,persoon%20doorgaans%20kleiner%20dan%20daarbuiten."
-						className="underline hover:text-emerald-300 transition-colors duration-200 text-emerald-300"
-					>
-						(CBS)
-					</a>
-					,<br />
-					heeft momenteel de gemmidelde huishouden
-					<br />
-					<span className="text-emerald-400 font-black text-4xl">
+					<h1 className="heading-primary">
+						Als we willen dat elk nieuw woning{" "}
 						{woonData.woonOppervlaktePerHuishouden
 							.toFixed(1)
-							.replace(".", ",")}
-						m² per woning
-					</span>
-					.
-				</h1>
+							.replace(".", ",")}{" "}
+						m² heeft, dan zullen nog steeds
+						<br />
+						<span className="highlight-emerald">
+							{(woonData.aantalDirectHuisvesten / 1000)
+								.toFixed(0)
+								.toLocaleString()}{" "}
+							duizend huishoudens
+						</span>
+						<br />
+						direct gehuisvest kunnen worden met de leegstand.
+					</h1>
 
-				<h1 className="text-5xl md:text-7xl font-black leading-tight text-white max-w-4xl uppercase tracking-tight">
-					Als we willen dat elk nieuw woning{" "}
-					{woonData.woonOppervlaktePerHuishouden
-						.toFixed(1)
-						.replace(".", ",")}{" "}
-					m² heeft, dan zullen nog steeds
-					<br />
-					<span className="text-emerald-400 drop-shadow-[0_0_30px_rgba(52,211,153,0.5)]">
-						{(woonData.aantalDirectHuisvesten / 1000)
-							.toFixed(0)
-							.toLocaleString()}{" "}
-						duizend huishoudens
-					</span>
-					<br />
-					direct gehuisvest kunnen worden met de leegstand.
-				</h1>
+					<h1 className="heading-primary">
+						De overige
+						<br />
+						<span className="highlight-emerald">
+							{(woonData.aantalLaterHuisvesten / 1000)
+								.toFixed(0)
+								.toLocaleString()}{" "}
+							duizend huishoudens
+						</span>
+						<br />
+						zullen dan nog steeds <br />
+						in slechts{" "}
+						<span className="highlight-emerald">
+							{Math.ceil(woonData.laterTeHuisvestenJaren).toFixed(
+								0
+							)}{" "}
+							jaar
+						</span>{" "}
+						gehuisvest worden met de huidige nieuwewoonsnelheid.
+					</h1>
 
-				<h1 className="text-5xl md:text-7xl font-black leading-tight text-white max-w-4xl uppercase tracking-tight">
-					De overige
-					<br />
-					<span className="text-emerald-400 drop-shadow-[0_0_30px_rgba(52,211,153,0.5)]">
-						{(woonData.aantalLaterHuisvesten / 1000)
-							.toFixed(0)
-							.toLocaleString()}{" "}
-						duizend huishoudens
-					</span>
-					<br />
-					zullen dan nog steeds <br />
-					in slechts{" "}
-					<span className="text-emerald-400 drop-shadow-[0_0_30px_rgba(52,211,153,0.5)]">
-						{Math.ceil(woonData.laterTeHuisvestenJaren).toFixed(0)}{" "}
-						jaar
-					</span>{" "}
-					gehuisvest worden met de huidige nieuwewoonsnelheid.
-				</h1>
+					<h1 className="heading-primary">
+						Maak wonen een{" "}
+						<span className="highlight-red">recht</span>.
+					</h1>
 
-				<h1 className="text-5xl md:text-7xl font-black leading-tight text-white max-w-4xl uppercase tracking-tight">
-					Maak wonen een{" "}
-					<span className="text-red-500 drop-shadow-[0_0_30px_rgba(239,68,68,0.5)]">
-						recht
-					</span>
-					.
-				</h1>
-
-				<p className="text-2xl md:text-3xl text-white max-w-3xl font-bold ml-15">
-					De grote huisjesmelkers die speculeren op woningen om alleen
-					maar geld te verdienen moeten{" "}
-					<span className="text-red-500 drop-shadow-[0_0_30px_rgba(239,68,68,0.5)] italic">
-						gestopt worden
-					</span>
-					.
-				</p>
-
-				<p className="text-3xl md:text-4xl text-white max-w-3xl font-black border-4 border-red-500 p-8 bg-red-500/10 uppercase tracking-wide ml-15">
-					Geef je om wonen in Nederland? Stem dan op partijen die dit
-					echt ondersteunen.
-				</p>
-			</div>
-			<div className="mt-10 bottom-8 flex flex-row justify-center w-full flex-wrap">
-				{partijen.map((partij) => (
-					<a
-						key={partij.name}
-						href={partij.url}
-						target="_blank"
-						rel="noopener noreferrer"
-						className="flex flex-col items-center mx-4 text-white hover:text-emerald-300 transition-colors duration-200"
+					<p
+						className="text-medium font-bold margin-left"
+						style={{ color: "#fff" }}
 					>
-						{partij.svg_src && (
-							<img
-								src={partij.svg_src}
-								alt={partij.name}
-								className="h-8 md:h-20 mb-2"
-							/>
-						)}
-						{!partij.svg_src && (
-							<span className="text-lg md:text-xl underline">
-								{partij.name}
-							</span>
-						)}
-					</a>
-				))}
+						De grote huisjesmelkers die speculeren op woningen om
+						alleen maar geld te verdienen moeten{" "}
+						<span className="highlight-red italic">
+							gestopt worden
+						</span>
+						.
+					</p>
+
+					<p className="call-to-action-box">
+						Geef je om wonen in Nederland? Stem dan op partijen die
+						dit echt ondersteunen.
+					</p>
+				</div>
+				<div className="party-logos">
+					{partijen.map((partij) => (
+						<a
+							key={partij.name}
+							href={partij.url}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="party-link"
+						>
+							{partij.svg_src && (
+								<img
+									src={partij.svg_src}
+									alt={partij.name}
+									className="party-logo"
+								/>
+							)}
+							{!partij.svg_src && (
+								<span className="party-name">
+									{partij.name}
+								</span>
+							)}
+						</a>
+					))}
+				</div>
 			</div>
-		</div>
+		</>
 	);
 }
