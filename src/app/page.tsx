@@ -292,6 +292,11 @@ export default function Home() {
 						woningen.
 					</h1>
 
+					<p className="text-medium text-gray font-bold margin-left">
+						Als dit beschikbaar zou zijn voor elke burger,
+						natuurlijk...
+					</p>
+
 					<h1 className="heading-primary">
 						Maak wonen een{" "}
 						<span className="highlight-red">recht</span>.
