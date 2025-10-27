@@ -283,7 +283,10 @@ export default function Home() {
 						zullen dan nog steeds <br />
 						in slechts{" "}
 						<span className="highlight-emerald">
-							{woonData.laterTeHuisvestenJaren.toFixed(1)} jaar
+							{woonData.laterTeHuisvestenJaren
+								.toFixed(1)
+								.replace(".", ",")}{" "}
+							jaar
 						</span>{" "}
 						gehuisvest worden met de huidige snelheid nieuwe
 						woningen.
