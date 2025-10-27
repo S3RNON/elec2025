@@ -27,7 +27,7 @@
 }
 
 .content-wrapper > * + * {
-	margin-top: 16rem;
+	margin-top: 25rem;
 }
 
 /* Typography */
@@ -206,6 +206,14 @@ body {
 
 /* Responsive styles */
 @media (min-width: 768px) {
+    .spacer {
+        height: 25vh !important;
+    }
+
+    .content-wrapper > * + * {
+        margin-top: 35rem !important;
+    }
+
 	.heading-primary {
 		font-size: 4.5rem;
 		max-width: 56rem !important;
