@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import "./wonen.css";
 
 class WoonData {
 	public totaleLeegstand: number = 0;
@@ -109,10 +110,13 @@ export default function Home() {
 		setWoonData(newWoonData);
 	}, []);
 
-	if (!woonData) return <div>Loading...</div>;
+	if (!woonData) return <div></div>;
 
 	return (
-		<div className="font-[var(--font-lexend-deca)] flex flex-col items-center min-h-screen bg-black p-8 text-center">
+		<div
+			className="font-[var(--font-lexend-deca)] flex flex-col items-center min-h-screen bg-black p-8 text-center"
+			style={{ width: "100vw", overflowX: "hidden" }}
+		>
 			<div style={{ height: "25vh" }}></div>
 			<div className="flex flex-col justify-center min-h-screen space-y-64">
 				<h1 className="text-5xl md:text-7xl font-black leading-tight text-white max-w-4xl uppercase tracking-tight">
