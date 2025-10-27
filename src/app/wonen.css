@@ -32,7 +32,7 @@
 
 /* Typography */
 .heading-primary {
-	font-size: 3rem;
+	font-size: 1.5rem;
 	font-weight: 900;
 	line-height: 1.2;
 	color: #fff;
@@ -112,7 +112,7 @@
 
 /* Box styles */
 .call-to-action-box {
-	font-size: 1.875rem;
+	font-size: 1.5rem;
 	color: #fff;
 	max-width: 48rem;
 	font-weight: 900;
