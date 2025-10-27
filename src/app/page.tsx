@@ -160,7 +160,8 @@ export default function Home() {
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								(CBS)
+								<br />
+								(Volkshuisvesting Nederland)
 							</a>
 						</span>
 					</h1>
@@ -282,10 +283,7 @@ export default function Home() {
 						zullen dan nog steeds <br />
 						in slechts{" "}
 						<span className="highlight-emerald">
-							{Math.ceil(woonData.laterTeHuisvestenJaren).toFixed(
-								0
-							)}{" "}
-							jaar
+							{woonData.laterTeHuisvestenJaren.toFixed(1)} jaar
 						</span>{" "}
 						gehuisvest worden met de huidige snelheid nieuwe
 						woningen.
