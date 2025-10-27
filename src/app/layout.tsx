@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 		icon: "/favicon.svg",
 		shortcut: "/favicon.svg",
 	},
+	viewport: "width=device-width, initial-scale=1.0",
 };
 
 export default function RootLayout({

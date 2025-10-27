@@ -13,7 +13,7 @@
 @media (prefers-color-scheme: dark) {
 	:root {
 		--background: #0a0a0a;
-		--foreground: #ededed;
+		--foreground: #412a2a;
 	}
 }
 
@@ -23,6 +23,11 @@ body {
 	padding: 0;
 	width: 100%;
 	overflow-x: hidden;
+}
+
+html {
+	font-size: 16px;
+	-webkit-text-size-adjust: 100%; /* voorkom Safari auto-zoom */
 }
 
 body {

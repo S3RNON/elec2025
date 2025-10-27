@@ -38,7 +38,7 @@
 	color: #fff;
 	text-transform: uppercase;
 	letter-spacing: -0.025em;
-	max-width: 56rem;
+	max-width: 80vw;
 }
 
 .heading-secondary {
@@ -46,7 +46,7 @@
 	font-weight: 600;
 	line-height: 1.625;
 	color: #fff;
-	max-width: 56rem;
+	max-width: 80vw;
 }
 
 .text-large {
@@ -208,10 +208,12 @@ body {
 @media (min-width: 768px) {
 	.heading-primary {
 		font-size: 4.5rem;
+		max-width: 56rem !important;
 	}
 
 	.heading-secondary {
 		font-size: 1.875rem;
+		max-width: 56rem !important;
 	}
 
 	.text-large {
