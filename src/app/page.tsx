@@ -84,18 +84,18 @@ export default function Home() {
 
 	useEffect(() => {
 		const leegstandData = {
-			Friesland: 1_301_350,
-			Groningen: 1_288_540,
-			Drenthe: 907_630,
-			Overijssel: 2_207_560,
-			Flevoland: 640_780,
-			Gelderland: 4_017_020,
-			Utrecht: 2_517_120,
-			"Noord-Holland": 6_163_130,
-			"Zuid-Holland": 6_963_630,
-			Zeeland: 896_230,
-			"Noord-Brabant": 5_596_780,
-			Limburg: 4_041_900,
+			"Zuid-Holland": 6963630,
+			"Noord-Holland": 6163130,
+			"Noord-Brabant": 5596780,
+			Limburg: 4041900,
+			Gelderland: 4017020,
+			Utrecht: 2517120,
+			Overijssel: 2207560,
+			Fryslân: 1301350,
+			Groningen: 1288540,
+			Drenthe: 907630,
+			Zeeland: 896230,
+			Flevoland: 640780,
 		};
 
 		const woningzoekendeHuishoudens = 434_000;
@@ -140,8 +140,7 @@ export default function Home() {
 					</h1>
 
 					<p className="text-medium bordered-text-red">
-						Dit is leegstand dat langer dan een jaar niet in gebruik
-						is.
+						Dit is leegstand dat een jaar niet in gebruik is.
 					</p>
 
 					<h1 className="heading-primary">
