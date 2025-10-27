@@ -10,6 +10,10 @@ const lexendDeca = Lexend_Deca({
 export const metadata: Metadata = {
 	title: "Wonen in Nederland",
 	description: "Een inkijk naar hoe wonen in Nederland echt in elkaar zit.",
+	icons: {
+		icon: "/favicon.svg",
+		shortcut: "/favicon.svg",
+	},
 };
 
 export default function RootLayout({
